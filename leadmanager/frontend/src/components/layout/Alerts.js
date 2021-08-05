@@ -10,10 +10,16 @@ export class Alerts extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const {error, alert} = this.props
+    const {error, alert, message} = this.props
     if (error !== prevProps.error){
       Object.keys(error.msg).map(key =>{
         alert.error(`${key}: ${error.msg[key]}`)
+      })
+    }
+
+    if (message !== prevProps.message){
+      Object.keys(message).map(key =>{
+        alert.success(message[key])
       })
     }
   }
@@ -24,7 +30,8 @@ export class Alerts extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    error: state.errors
+    error: state.errors,
+    message: state.messages
 })
 
 export default connect(mapStateToProps)(withAlert()(Alerts));
