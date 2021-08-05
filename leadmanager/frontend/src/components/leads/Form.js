@@ -34,8 +34,8 @@ class Form extends Component {
       <div className="card card-body mt-4 mb-4">
         <h2>Add Lead</h2>
         <form onSubmit={this.onSubmit}>
-          <div className="form-group">
-            <label>Name</label>
+          <div className="mb-3">
+            <label className="form-label">Name</label>
             <input
               type="text"
               className="form-control"
@@ -44,8 +44,8 @@ class Form extends Component {
               value={name}
               />
           </div>
-          <div className="form-group">
-            <label>Email</label>
+          <div className="mb-3">
+            <label className="form-label" >Email</label>
             <input
               type="email"
               className="form-control"
@@ -54,8 +54,8 @@ class Form extends Component {
               value={email}
               />
           </div>
-          <div className="form-group">
-            <label>Message</label>
+          <div className="mb-3">
+            <label className="form-label">Message</label>
             <input
               type="text"
               className="form-control"
@@ -64,7 +64,7 @@ class Form extends Component {
               value={message}
               />
           </div>
-          <div className="form-group">
+          <div className="mb-3">
             <button type="submit" className="btn btn-primary">
               Submit
             </button>
